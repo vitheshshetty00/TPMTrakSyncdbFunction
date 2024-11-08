@@ -27,7 +27,6 @@ Azure.Messaging.ServiceBus.ServiceBusReceivedMessage message,
             _logger.LogInformation("Message Content-Type: {contentType}", message.ContentType);
             InsertToDb(message);
 
-            // Complete the message
             await messageActions.CompleteMessageAsync(message);
         }
         private void InsertToDb(ServiceBusReceivedMessage message)

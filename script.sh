@@ -16,7 +16,7 @@ log() {
 }
 
 # Start deployment
-log "Starting Blazor App Deployment"
+log "Starting TPMTrak App Deployment"
 
 # Update package list
 sudo apt update
@@ -71,7 +71,7 @@ fi
 log "Cleanup completed successfully!"
 
 # Download and extract application
-log "Downloading the Blazor app from Azure Blob Storage..."
+log "Downloading the TPMTRAK app from Azure Blob Storage..."
 wget -O "$APP_DIR/publish.zip" "https://tpmtrakstorage.blob.core.windows.net/$CONTAINER_NAME/$BLOB_NAME?$SAS_TOKEN" || {
     log "Failed to download application files."
     exit 1
